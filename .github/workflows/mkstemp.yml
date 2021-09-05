@@ -1,0 +1,16 @@
+name: Find mkstemp
+
+jobs:
+  mkstemp:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+    steps:
+      - name: check out repository
+        uses: actions/checkout@v2
+      - name: cmake mkstemp
+        run: |
+          mkdir build
+          cd build
+          cmake ../mkstemp
