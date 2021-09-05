@@ -1,1 +1,4 @@
+# directory used to build test
 /build/
+# vim swap files
+*.swp
