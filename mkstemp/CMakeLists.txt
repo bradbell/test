@@ -13,4 +13,5 @@ int main(void)
     return 0;
 }
 " )
-compile_source_test("${source}" cxx_has_mkstemp)
+compile_source_test("${source}" cxx_has_mkstemp_1)
+compile_source_test("${source}" cxx_has_mkstemp_2)
