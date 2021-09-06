@@ -1,5 +1,5 @@
 INCLUDE(CheckCXXSourceCompiles)
-MACRO(compile_source_test source variable)
+FUNCTION(compile_source_test source variable)
     #
     # check that variable is not yet defined
     IF( DEFINED ${variable} )
@@ -18,8 +18,9 @@ MACRO(compile_source_test source variable)
     # change result varialbe to 0 (1) for fail (succeed).
     IF( compiles_source_test_result )
         SET(${variable} 1)
+        SET(${variable} 1 PARENT_SCOPE )
     ELSE( compiles_source_test_result )
-        SET(${variable} 0)
+        SET(${variable} 0 PARENT_SCOPE )
     ENDIF( compiles_source_test_result )
     #
     # check that varialbe is defined
@@ -30,4 +31,4 @@ MACRO(compile_source_test source variable)
     ENDIF( NOT DEFINED ${variable} )
     #
     MESSAGE(STATUS "${variable} = ${${variable}}" )
-ENDMACRO( compile_source_test )
+ENDFUNCTION( compile_source_test )

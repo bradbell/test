@@ -14,4 +14,6 @@ int main(void)
 }
 " )
 compile_source_test("${source}" cxx_has_mkstemp_1)
+MESSAGE(STATUS "cxx_has_mkstemp_1 = ${cxx_has_mkstemp_1}")
 compile_source_test("${source}" cxx_has_mkstemp_2)
+MESSAGE(STATUS "cxx_has_mkstemp_2 = ${cxx_has_mkstemp_2}")
